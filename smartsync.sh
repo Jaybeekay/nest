@@ -7,9 +7,6 @@
 #
 #		Created by: J3K47
 
-# Create Directory on destination for the day (Gotsto be organised)
-mkdir /media/BLACKBERRY/$(date +%m%d)
-
 # Specifiy Directory
 DIR=/media/BLACKBERRY/$(date +%m%d)/
 
@@ -20,6 +17,9 @@ if [ "$(ls -d '/media/JUSTIN' )" = /media/JUSTIN ]; then
 		# Check if Destination Media Is Present
 		if [ "$(ls -d '/media/BLACKBERRY' )" = /media/BLACKBERRY ]; then
 			echo "BLACKJACKED"
+
+			# Create Directory on destination for the day (Gotsto be organised)
+			mkdir /media/BLACKBERRY/$(date +%m%d)
 
 			# Sync the media over to destination
 			[  "$(scp -vr /media/JUSTIN/*.mp3 $DIR)" ]
